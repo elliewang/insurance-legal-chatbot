@@ -1,8 +1,114 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101c34"><meta name="description" content="Conversational insurance legal operations and legal matter management concept by Wenting Wang"><title>LexFlow Copilot | Wenting Wang</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="header"><a class="logo" href="#home"><span class="logo-icon">L<span>✦</span></span><span>LexFlow <b>Copilot</b><small>LEGAL OPERATIONS STUDIO</small></span></a><div class="header-actions"><span class="demo-tag">● Independent portfolio demo</span><button id="resetBtn" class="button ghost">↻ Reset demo</button></div></header>
-<div class="shell" id="home"><aside class="nav"><div class="nav-overline">WORKSPACE</div><button class="nav-item active" data-panel="overview">▦ <span>Overview</span></button><button class="nav-item" data-panel="assistant">✦ <span>AI-style legal assistant</span></button><button class="nav-item" data-panel="matters">▤ <span>Matter details</span></button><button class="nav-item" data-panel="analytics">▥ <span>Insights & audit</span></button><div class="nav-overline later">LIFECYCLE</div><div id="stageNav"></div><div class="side-note"><strong>Built by Wenting Wang</strong><p>Software engineering leadership · Cloud · AI / RAG architecture</p><span>Fictional data only. No external services.</span></div></aside>
-<main class="main"><div class="content"><div class="intro"><div><div class="eyebrow">INTELLIGENT LEGAL ENGAGEMENT • INTERACTIVE CONCEPT</div><h1>Legal operations, <em>in conversation.</em></h1><p>Navigate the full insurance legal matter lifecycle, from request through counsel, review, resolution and customer communications.</p></div><button class="button primary" id="newMatter">+ New legal request</button></div><div class="metric-row"><div class="metric"><span>ACTIVE MATTER</span><strong id="metricMatter">Not created</strong><small>Working demo</small></div><div class="metric"><span>RISK ASSESSMENT</span><strong id="metricRisk">Not assessed</strong><small>Illustrative rules only</small></div><div class="metric"><span>CURRENT STAGE</span><strong id="metricStage">01 / 09</strong><small>Legal engagement lifecycle</small></div><div class="metric"><span>LEGAL BUDGET</span><strong id="metricBudget">$0</strong><small>Simulated allocation</small></div></div>
-<section class="workspace-grid"><div class="card workspace-card"><div class="card-top"><div><div class="eyebrow">MATTER WORKSPACE</div><h2 id="mainHeading">Create a legal request</h2><p id="mainSubtitle">A guided matter lifecycle for insurance legal teams.</p></div><span class="tag" id="matterTag">DRAFT</span></div><div class="progress-track"><div id="progressFill"></div></div><div class="stage-scroll" id="stageChips"></div><div id="panelBody"></div></div>
-<div class="card chat-card" id="assistantPanel"><div class="chat-head"><div class="bot-avatar">✦</div><div><strong>LexFlow Assistant</strong><small>Guided intake · Workflow help · Demo scenarios</small></div><span class="online">● Ready</span></div><div class="chat-notice">Rule-based simulation, not a live AI model or legal advice. Do not enter confidential information.</div><div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="Assistant conversation"></div><div id="quickActions" class="quick-actions"></div><form id="chatForm" class="chat-form"><label class="sr-only" for="chatInput">Message</label><input id="chatInput" maxlength="600" autocomplete="off" placeholder="Ask about intake, risk, counsel..." required><button type="submit" class="send-btn" aria-label="Send message">➤</button></form></div></section>
-<section class="bottom-grid"><div class="card activity"><div class="card-top"><div><div class="eyebrow">TRANSPARENCY</div><h2>Activity & audit events</h2></div><button id="exportBtn" class="button ghost">↓ Export demo JSON</button></div><div id="eventList" class="event-list"></div></div><div class="card flow-summary"><div class="eyebrow">DESIGNED FOR ENTERPRISE SCALE</div><h2>One connected lifecycle</h2><p>Request → Intake → Triage → Counsel → Execute → Approve → Resolve → Close → Communicate</p><div class="stack"><span>Java / Spring Boot</span><span>AWS / Azure</span><span>RAG concepts</span><span>Audit & governance</span></div><p class="tiny">Proposed production architecture only. No server, API, messaging provider, or AI service is connected.</p></div></section></div></main></div>
-<footer>© <span id="year"></span> Wenting Wang · LexFlow Copilot · Independent educational concept, not affiliated with any insurer · Not legal advice</footer><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101c34">
+    <meta name="description"
+        content="Conversational insurance legal operations and legal matter management concept by Wenting Wang">
+    <title>Workflow Copilot | Wenting Wang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header"><a class="logo" href="#home"><span class="logo-icon">L<span>✦</span></span><span>Workflow
+                <b>Copilot</b><small>LEGAL OPERATIONS STUDIO</small></span></a>
+        <div class="header-actions"><span class="demo-tag">● Independent portfolio demo</span><button id="resetBtn"
+                class="button ghost">↻ Reset demo</button></div>
+    </header>
+    <div class="shell" id="home">
+        <aside class="nav">
+            <div class="nav-overline">WORKSPACE</div><button class="nav-item active" data-panel="overview">▦
+                <span>Overview</span></button><button class="nav-item" data-panel="assistant">✦ <span>AI-style legal
+                    assistant</span></button><button class="nav-item" data-panel="matters">▤ <span>Matter
+                    details</span></button><button class="nav-item" data-panel="analytics">▥ <span>Insights &
+                    audit</span></button>
+            <div class="nav-overline later">LIFECYCLE</div>
+            <div id="stageNav"></div>
+            <div class="side-note"><strong>Built by Wenting Wang</strong>
+                <p>Software engineering leadership · Cloud · AI / RAG architecture</p><span>Fictional data only. No
+                    external services.</span>
+            </div>
+        </aside>
+        <main class="main">
+            <div class="content">
+                <div class="intro">
+                    <div>
+                        <div class="eyebrow">INTELLIGENT LEGAL ENGAGEMENT • INTERACTIVE CONCEPT</div>
+                        <h1>Legal operations, <em>in conversation.</em></h1>
+                        <p>Navigate the full insurance legal matter lifecycle, from request through counsel, review,
+                            resolution and customer communications.</p>
+                    </div><button class="button primary" id="newMatter">+ New legal request</button>
+                </div>
+                <div class="metric-row">
+                    <div class="metric"><span>ACTIVE MATTER</span><strong id="metricMatter">Not
+                            created</strong><small>Working demo</small></div>
+                    <div class="metric"><span>RISK ASSESSMENT</span><strong id="metricRisk">Not
+                            assessed</strong><small>Illustrative rules only</small></div>
+                    <div class="metric"><span>CURRENT STAGE</span><strong id="metricStage">01 / 09</strong><small>Legal
+                            engagement lifecycle</small></div>
+                    <div class="metric"><span>LEGAL BUDGET</span><strong id="metricBudget">$0</strong><small>Simulated
+                            allocation</small></div>
+                </div>
+                <section class="workspace-grid">
+                    <div class="card workspace-card">
+                        <div class="card-top">
+                            <div>
+                                <div class="eyebrow">MATTER WORKSPACE</div>
+                                <h2 id="mainHeading">Create a legal request</h2>
+                                <p id="mainSubtitle">A guided matter lifecycle for insurance legal teams.</p>
+                            </div><span class="tag" id="matterTag">DRAFT</span>
+                        </div>
+                        <div class="progress-track">
+                            <div id="progressFill"></div>
+                        </div>
+                        <div class="stage-scroll" id="stageChips"></div>
+                        <div id="panelBody"></div>
+                    </div>
+                    <div class="card chat-card" id="assistantPanel">
+                        <div class="chat-head">
+                            <div class="bot-avatar">✦</div>
+                            <div><strong>Workflow Assistant</strong><small>Guided intake · Workflow help · Demo
+                                    scenarios</small></div><span class="online">● Ready</span>
+                        </div>
+                        <div class="chat-notice">Rule-based simulation, not a live AI model or legal advice. Do not
+                            enter confidential information.</div>
+                        <div id="chatLog" class="chat-log" role="log" aria-live="polite"
+                            aria-label="Assistant conversation"></div>
+                        <div id="quickActions" class="quick-actions"></div>
+                        <form id="chatForm" class="chat-form"><label class="sr-only"
+                                for="chatInput">Message</label><input id="chatInput" maxlength="600" autocomplete="off"
+                                placeholder="Ask about intake, risk, counsel..." required><button type="submit"
+                                class="send-btn" aria-label="Send message">➤</button></form>
+                    </div>
+                </section>
+                <section class="bottom-grid">
+                    <div class="card activity">
+                        <div class="card-top">
+                            <div>
+                                <div class="eyebrow">TRANSPARENCY</div>
+                                <h2>Activity & audit events</h2>
+                            </div><button id="exportBtn" class="button ghost">↓ Export demo JSON</button>
+                        </div>
+                        <div id="eventList" class="event-list"></div>
+                    </div>
+                    <div class="card flow-summary">
+                        <div class="eyebrow">DESIGNED FOR ENTERPRISE SCALE</div>
+                        <h2>One connected lifecycle</h2>
+                        <p>Request → Intake → Triage → Counsel → Execute → Approve → Resolve → Close → Communicate</p>
+                        <div class="stack"><span>Java / Spring Boot</span><span>AWS / Azure</span><span>RAG
+                                concepts</span><span>Audit & governance</span></div>
+                        <p class="tiny">Proposed production architecture only. No server, API, messaging provider, or AI
+                            service is connected.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <footer>© <span id="year"></span> Wenting Wang · Workflow Copilot · Independent educational concept, not affiliated
+        with any insurer · Not legal advice</footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
